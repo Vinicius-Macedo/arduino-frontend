@@ -1,0 +1,29 @@
+.footer {
+  padding: 16px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: $dark;
+
+  .footer-p {
+    font-size: $base;
+    text-align: center;
+    font-weight: 700;
+    color: $white;
+  }
+
+  @include md {
+    justify-content: space-between;
+
+  }
+
+  @include lg {
+    padding-right: 94px;
+    padding-left: 94px;
+  }
+
+
+}

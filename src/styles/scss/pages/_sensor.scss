@@ -1,0 +1,131 @@
+.ilu-abstract {
+  position: absolute;
+  width: 120px;
+  z-index: -10;
+  right: -30px;
+
+  @include md {
+    width: 150px;
+    right: -60px;
+  }
+
+  @include lg {
+    width: auto;
+    top: 60px;
+    right: -140px;
+  }
+}
+
+.ilu-abstract.right {
+  opacity: 0.5;
+  left: -60px;
+  top: 600px;
+
+  @include md {
+    width: 110px;
+    top: 500px;
+    left: -30px;
+  }
+
+  @include lg {
+    width: auto;
+    left: 20px;
+    top: 480px;
+  }
+}
+
+#arduino {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  padding: 60px 0;
+
+  @include xl {
+    height: 600px;
+  }
+
+  .arduino-h2 {
+    // display: none;
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  @include lg {
+    padding-bottom: 50px;
+  }
+
+  .sensors-container {
+    gap: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+
+    .sensor-item {
+      width: 302px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+
+      .sensor-h2 {
+        color: $white;
+        font-weight: 700;
+        font-size: $semi;
+      }
+
+      .sensor-values-container {
+        width: 100%;
+        height: 100px;
+        padding: 20px;
+
+        background: $dark-blue;
+        border-radius: 4px;
+        display: flex;
+        gap: 32px;
+        align-items: center;
+
+        .sensor-parameter {
+          color: $white;
+
+          .sensor-value {
+            overflow-wrap: normal;
+            word-break: normal;
+            font-size: 1.82rem;
+            font-weight: 700;
+
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// #arduino .sensors-container .sensor-item .
+
+// #arduino
+//   .sensors-container
+//   .sensor-item
+//
+
+// #arduino
+//   .sensors-container
+//   .sensor-item
+//   .sensor-values-container
+//   .sensor-parameter
+//   .sensor-p {
+//   @apply text-base;
+// }
+
+// #arduino
+//   .sensors-container
+//   .sensor-item
+//   .sensor-values-container
+//   .sensor-parameter
+//   .sensor-value {
+//   @apply font-bold
+//   break-normal
+//   text-semigold;
+// }

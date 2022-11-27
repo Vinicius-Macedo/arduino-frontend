@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// // BASE
+// @import 'core/base';
+
+html {
+  font-family: "Roboto", sans-serif;
+  background: #00192e;
+  // overflow-x: hidden
+}
+
+@import "core/fonts";
+@import "core/breakpoints";
+@import "core/colors";
+@import "core/utilities";
+@import "core/utilities";
+
+// PARTIALS
+@import "layout/header";
+@import "layout/footer";
+
+// //BLOCKS
+@import "block/alert";
+// @import 'block/layout-two-columns';
+// @import 'block/paginacao';
+// @import 'block/compartilhar';
+// @import 'block/calculadora';
+
+// // PÁGINAS
+@import "pages/home";
+@import "pages/sensor";
+@import "pages/temperatura";
+// @import 'pages/blogs';
+// @import 'pages/noticia';
+// @import 'pages/noticia-lista';
+
+.icon-container.right {
+  transform: scaleX(-1);
+}
+
+.search-field {
+  @apply w-full px-8 bg-[#00294d] text-white py-4;
+
+  border-radius: 4px 0px 0px 4px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.select-field {
+  @apply w-full px-8 bg-[#00294d] text-white mr-8 relative;
+
+  &:focus {
+    outline: none;
+  }
+  
+}
+
+.border-radius-10 {
+  border-radius: 10px;
+}
+
+.btn-button {
+  border-radius: 0 4px 4px 0;
+  @apply text-black bg-white px-8 py-4 font-bold;
+}
+
+.select-order-btn {
+  @apply text-white px-8 py-4 bg-[#00294d] rounded hover:bg-[#004480];
+
+  &.active,&:active {
+    @apply bg-[#006dcc];
+  }
+}
+
+.arduino-data-table {
+  width: 100%;
+  max-width: 1110px;
+  margin: 32px auto;
+  border-collapse: separate;
+  border-spacing: 0px 8px;
+
+  thead {
+    @apply text-white text-lg font-bold;
+
+    th {
+      @apply px-8 py-4;
+    }
+  }
+
+  tbody {
+    @apply text-white text-lg;
+
+    tr {
+      @apply py-4 bg-[#00294d] rounded-lg;
+
+      td {
+        @apply px-8 py-4;
+      }
+    }
+  }
+}
