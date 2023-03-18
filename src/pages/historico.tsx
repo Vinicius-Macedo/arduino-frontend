@@ -3,11 +3,13 @@ import { GoArrowUp, GoArrowDown } from "react-icons/go";
 import { IoMdRefresh } from "react-icons/io";
 import { OrderButton } from "../components/OrderButton";
 
+type Filtro = "data" | "categoria" | "descrição" | "valor";
+
 export default function historico() {
   const [inputTextValue, setInputTextValue] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("");
 
-  const [selectedOrder, setSelectedOrder] = useState("data");
+  const [selectedOrder, setSelectedOrder] = useState<Filtro>("data");
   const [fromSamllToBig, setFromSamllToBig] = useState(false);
 
   const [apiData, setApiData] = useState<any>([]);
@@ -138,19 +140,19 @@ export default function historico() {
               buttonText={"Data"}
             />
             <OrderButton
-              onClick={() => setSelectedOrder("celsius")}
+              onClick={() => setSelectedOrder("categoria")}
               selectedButton={selectedOrder}
-              buttonText={"Celsius"}
+              buttonText={"Categoria"}
             />
             <OrderButton
-              onClick={() => setSelectedOrder("ppm")}
+              onClick={() => setSelectedOrder("descrição")}
               selectedButton={selectedOrder}
-              buttonText={"PPM"}
+              buttonText={"Descrição"}
             />
             <OrderButton
-              onClick={() => setSelectedOrder("ma")}
+              onClick={() => setSelectedOrder("valor")}
               selectedButton={selectedOrder}
-              buttonText={"mA"}
+              buttonText={"Valor"}
             />
           </div>
           <div className="flex gap-4">
@@ -202,15 +204,15 @@ export default function historico() {
                       a = new Date(convertToInternacionalDate(a.created_at));
                       b = new Date(convertToInternacionalDate(b.created_at));
                       break;
-                    case "celsius":
-                      a = a.temperatura;
-                      b = b.temperatura;
+                    case "categoria":
+                      a = a.category;
+                      b = b.category;
                       break;
-                    case "ppm":
+                    case "descrição":
                       a = a.gas;
                       b = b.gas;
                       break;
-                    case "ma":
+                    case "valor":
                       a = a.corrente;
                       b = b.corrente;
                       break;
@@ -224,15 +226,14 @@ export default function historico() {
                     return b - a;
                   }
                 })
-                .filter((item: any) => {
-                  return inputTextValue.toLowerCase() == "" ||
-                    selectedFilter == ""
-                    ? item
-                    : item[selectedFilter]
-                        .toString()
-                        .toLowerCase()
-                        .includes(inputTextValue);
-                })
+                // .filter((item: any) => {
+                //   return inputTextValue.toLowerCase() == ""
+                //     ? item
+                //     : item[selectedFilter]
+                //         .toString()
+                //         .toLowerCase()
+                //         .includes(inputTextValue);
+                // })
                 .map((item: any) => (
                   <tr key={item.id}>
                     <td className="w-2/5">{item.created_at}</td>

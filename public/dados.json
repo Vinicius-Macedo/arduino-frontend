@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemplo de resposta JSON</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script>
+		var objeto = {"temperatura":10, "gas":0, "corrente":20};
+		var json = JSON.stringify(objeto);
+		document.write(json);
+	</script>
+</body>
+</html>
