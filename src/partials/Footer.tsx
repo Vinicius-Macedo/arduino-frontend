@@ -23,7 +23,7 @@ export function Footer() {
               com o técnico responsável
             </p>
           </article>
-          <div className="buttons-container">
+          {/* <div className="buttons-container">
             <button
               onClick={() => context.setIsSiteContaminated(false)}
               className="alert-button"
@@ -31,7 +31,7 @@ export function Footer() {
             >
               Fechar
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

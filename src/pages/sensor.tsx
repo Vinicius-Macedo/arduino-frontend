@@ -52,7 +52,7 @@ export default function Sensor() {
     } else if (sensorValue <= medium) {
       return yellowColorHexa;
     } else {
-      // context.setIsSiteContaminated(true);
+      context.setIsSiteContaminated(true);
       return redColorHexa;
     }
   }
@@ -67,6 +67,7 @@ export default function Sensor() {
     } else if (sensorValue <= 1100) {
       return yellowColorHexa;
     } else {
+      context.setIsSiteContaminated(true);
       return redColorHexa;
     }
   }
@@ -85,6 +86,7 @@ export default function Sensor() {
     } else if (sensorValue <= 39) {
       return yellowColorHexa;
     } else {
+      context.setIsSiteContaminated(true);
       return redColorHexa;
     }
   }

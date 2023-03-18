@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
     if (getDataInterval == "") {
       getDataInterval = setInterval(function () {
         async function getSensorsData() {
-          const response = await fetch("/api/dados");
+          const response = await fetch("http://localhost/api.php");
           const data = await response.json();
           setDegreesCelsius(data["temperatura"]);
           setGas(data["gas"]);
@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
         // }
       }, 5000);
     }
-    
+
     console.log(getDataInterval);
   }, []);
 
